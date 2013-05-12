@@ -10,24 +10,6 @@ public class IPadNetworkDecorator extends IPadDecorator {
 
     @Override
     int getPrice() {
-        int accessoryPrice = 0;
-        try {
-            switch (network) {
-                case WIFI:
-                    accessoryPrice = 800;
-                    break;
-                case G3:
-                    accessoryPrice  = 1600;
-                    break;
-                case WIFI_G3:
-                    accessoryPrice = 3200;
-                    break;
-                default:
-                    throw new NoSuchFieldException();
-            }
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-        return iPad.getPrice() + accessoryPrice;
+        return iPad.getPrice() + network.getPrice();
     }
 }
