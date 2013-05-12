@@ -1,6 +1,6 @@
-package oo;
+package oo.accessory;
 
-public enum MemorySize{
+public enum MemorySize implements Accessory{
     G16(800), G32(1600), G64(2500), G128(3200);
 
     private final int price;

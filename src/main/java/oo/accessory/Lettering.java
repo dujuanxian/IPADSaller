@@ -1,6 +1,6 @@
-package oo;
+package oo.accessory;
 
-public enum Lettering {
+public enum Lettering implements Accessory{
     NORMAL(100), SILVER(200), GOLD(400);
 
     private final int price;
