@@ -25,10 +25,10 @@ public class IPadPriceTest {
     }
 
     @Test
-    public void shouldGetCorrectPriceForBlack16GIPad(){
-        IPad iPad = new BlackIPad();
-        IPadMemoryDecorator iPadMemoryDecorator = new IPadMemoryDecorator(iPad);
-        assertThat(iPadMemoryDecorator.getPrice(), is(3688 + 800));
+    public void shouldGetCorrectPriceForWhite64GIPad() {
+        IPad iPad = new WhiteIPad();
+        IPadMemoryDecorator iPad64GMemoryDecorator = new IPadMemoryDecorator(iPad, MemorySize.G64);
+        assertThat(iPad64GMemoryDecorator.getPrice(), is(3688 + 200 + 2500));
     }
 
     @Test
