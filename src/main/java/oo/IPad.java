@@ -1,5 +1,5 @@
 package oo;
 
-public interface IPad {
-    int getPrice();
+public abstract class IPad {
+    abstract int getPrice();
 }

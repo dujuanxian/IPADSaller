@@ -23,4 +23,18 @@ public class IPadPriceTest {
         IPad iPad = new RedIPad();
         assertThat(iPad.getPrice(), is(3688 + 400));
     }
+
+    @Test
+    public void shouldGetCorrectPriceForBlack16GIPad(){
+        IPad iPad = new BlackIPad();
+        IPadMemoryDecorator iPadMemoryDecorator = new IPadMemoryDecorator(iPad);
+        assertThat(iPadMemoryDecorator.getPrice(), is(3688 + 800));
+    }
+
+    @Test
+    public void shouldGetCorrectPriceForWhite16GIPad(){
+        IPad iPad = new WhiteIPad();
+        IPadMemoryDecorator iPadMemoryDecorator = new IPadMemoryDecorator(iPad);
+        assertThat(iPadMemoryDecorator.getPrice(), is(3688 + 200 + 800));
+    }
 }
