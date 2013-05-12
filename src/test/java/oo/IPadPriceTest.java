@@ -38,4 +38,13 @@ public class IPadPriceTest {
         IPad iPadWith32GMemory3GNetwork = new IPadNetworkDecorator(iPadWith32GMemory, Network.G3);
         assertThat(iPadWith32GMemory3GNetwork.getPrice(), is(3688 + 400 + 1600 + 1600));
     }
+
+    @Test
+    public void shouldGetCorrectPriceForWhite16GWifi3GNetworkGolfLetteringIPad() {
+        IPad iPad = new WhiteIPad();
+        IPad iPadWith16GMemory = new IPadMemoryDecorator(iPad, MemorySize.G16);
+        IPad iPadWith16GMemoryWifi3GNetwork = new IPadNetworkDecorator(iPadWith16GMemory, Network.WIFI_G3);
+        IPad iPadWith16GMemoryWifi3GNetworkGolfLettering = new IPadLetteringDecorator(iPadWith16GMemoryWifi3GNetwork, Lettering.GOLD);
+        assertThat(iPadWith16GMemoryWifi3GNetworkGolfLettering.getPrice(), is(3688 + 200 + 800 + 3200 + 400));
+    }
 }
