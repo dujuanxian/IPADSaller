@@ -32,9 +32,10 @@ public class IPadPriceTest {
     }
 
     @Test
-    public void shouldGetCorrectPriceForWhite16GIPad(){
-        IPad iPad = new WhiteIPad();
-        IPadMemoryDecorator iPadMemoryDecorator = new IPadMemoryDecorator(iPad);
-        assertThat(iPadMemoryDecorator.getPrice(), is(3688 + 200 + 800));
+    public void shouldGetCorrectPriceForRed32G3GNetworkIPad() {
+        IPad iPad = new RedIPad();
+        IPad iPadWith32GMemory = new IPadMemoryDecorator(iPad, MemorySize.G32);
+        IPad iPadWith32GMemory3GNetwork = new IPadNetworkDecorator(iPadWith32GMemory, Network.G3);
+        assertThat(iPadWith32GMemory3GNetwork.getPrice(), is(3688 + 400 + 1600 + 1600));
     }
 }
